@@ -4,7 +4,7 @@ import {
     createUserWithEmailAndPassword,
     onAuthStateChanged,
     signOut,
-} from "firebase/auth"; //getauth trae la autenticacion del registro
+} from "firebase/auth"; 
 
 import firebaseApp from "./firebaseconfig";
 

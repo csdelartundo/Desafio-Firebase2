@@ -31,7 +31,6 @@ router.beforeEach((to, from, next) => {
   const user = auth.currentUser;
 
   if (to.meta.requiresAuth && !user) {
-    // next('/login');
     next({ name: "login", query: { redirect: to.fullPath } });
   } else {
     next();
