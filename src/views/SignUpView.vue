@@ -2,9 +2,9 @@
     <div>
         <h2>Registro</h2>
         <input type="email" v-model="email" placeholder="Correo Electronico">
-        <input type="password" v-model="password" placeholder="Contraseña">
+        <input type="password" v-model="password" placeholder="Contraseña">
         <button @click="register">Registrarse</button>
-
+        <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
     </div>
 </template>
 
@@ -16,6 +16,7 @@ export default {
         return {
             email: '',
             password: '',
+            errorMessage: '',
         }
     },
     methods: {
@@ -23,15 +24,11 @@ export default {
             try {
                 const userCredential = await createUserWithEmailAndPassword(auth, this.email, this.password)
                 console.log("Usuario creado", userCredential)
-                this.email = ''
-                this.password = ''
+                this.$router.push('/');  // Redirige al Home tras registrarse
             } catch (error) {
-                console.error(error)
+                this.errorMessage = error.message;  // Muestra mensaje de error si falla
             }
-
         }
     }
 }
 </script>
-
-<style scoped></style>

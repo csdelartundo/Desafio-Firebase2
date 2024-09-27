@@ -1,9 +1,9 @@
 <template>
   <div>
     <h1>Esta es mi App con Firebase</h1>
-    <router-link v-if="isLoggedIn" to="/">Home</router-link>
-    <router-link v-if="!isLoggedIn" to="/signin">Registro</router-link>
     <router-link v-if="!isLoggedIn" to="/login">Login</router-link>
+    <router-link v-if="!isLoggedIn" to="/signup">Registro</router-link>
+    <router-link v-if="isLoggedIn" to="/">Home</router-link>
     <button v-if="isLoggedIn" @click="logout">Cerrar Sesion</button>
     <router-view></router-view>
   </div>
@@ -35,7 +35,7 @@ export default {
     async logout(){
       await signOut(auth);
       this.isLoggedIn = false;
-      this.$router.push('/');  // redireccionar a la página principal al cerrar sesion
+      this.$router.push('/login');  // redireccionar a la página principal al cerrar sesion
     }
   }
 }

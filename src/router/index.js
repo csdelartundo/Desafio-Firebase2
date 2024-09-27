@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import SingInView from "@/views/SignInView.vue";
+import SignUpView from "@/views/SignUpView.vue";
 import LoginView from "@/views/LoginView.vue";
 import { getAuth } from "firebase/auth";
 
@@ -14,9 +14,9 @@ const router = createRouter({
       meta: { requiresAuth: true },
     },
     {
-      path: "/signin",
-      name: "signin",
-      component: SingInView,
+      path: "/signup",
+      name: "signup",
+      component: SignUpView,
     },
     {
       path: "/login",
