@@ -1,29 +1,25 @@
-# desafio-firebase2
+# Demo de Aplicación Web con Autenticación
 
-This template should help get you started developing with Vue 3 in Vite.
+## Descripción
 
-## Recommended IDE Setup
+Este proyecto es una demostración de una aplicación web que implementa un sistema de autenticación utilizando **Vue.js** y **Firebase Authentication**. La aplicación contiene tres vistas principales: **Sign Up**, **Login**, y **Home**. 
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **Vista Sign Up**: Esta vista es pública y está destinada a usuarios que no están registrados. Permite a los nuevos usuarios registrarse completando un formulario de registro.
+  
+- **Vista Login**: También pública, permite a los usuarios registrados iniciar sesión en la aplicación. Los usuarios que no están logueados serán redirigidos a esta vista.
 
-## Customize configuration
+- **Vista Home**: Esta vista es privada y solo accesible para usuarios autenticados. Si un usuario no autenticado intenta acceder a ella, será redirigido automáticamente a la vista **Sign Up**.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Requerimientos
 
-## Project Setup
+Este proyecto cumple con los siguientes requerimientos:
 
-```sh
-npm install
-```
+1. **Integración de Firebase Authentication**: Utiliza Firebase Authentication para gestionar el registro e inicio de sesión de los usuarios.
+  
+2. **Guardianes de Vue Router**: Implementa guardianes en Vue Router para restringir el acceso a la vista **Home**. Solo los usuarios autenticados pueden acceder a esta vista.
 
-### Compile and Hot-Reload for Development
+3. **Componente de Registro**: Incluye un componente que permite a los nuevos usuarios crear una cuenta.
 
-```sh
-npm run dev
-```
+4. **Componente de Inicio de Sesión**: Proporciona un componente para que los usuarios registrados inicien sesión.
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+5. **Despliegue en Firebase Hosting**: Incluye la configuración necesaria para realizar el build de producción y desplegar la aplicación en Firebase Hosting.
